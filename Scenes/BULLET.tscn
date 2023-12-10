@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtvg14mjrb4yd"]
+
+[ext_resource type="Texture2D" uid="uid://c2m5dpgrxoqjq" path="res://Sprites/bullet.png" id="1_38mkr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_py8gm"]
+radius = 10.78
+
+[sub_resource type="Curve" id="Curve_fjv8q"]
+_data = [Vector2(0, 1), 0.0, 0.0174887, 0, 0, Vector2(1, 0), -2.6363, 0.0, 0, 0]
+point_count = 2
+
+[node name="BULLET" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+gravity_scale = 0.0
+continuous_cd = 1
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_py8gm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_38mkr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+light_mask = 0
+z_index = -1
+amount = 50
+speed_scale = 5.0
+fixed_fps = 144
+texture = ExtResource("1_38mkr")
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_fjv8q")

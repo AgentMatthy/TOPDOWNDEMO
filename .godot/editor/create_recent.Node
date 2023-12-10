@@ -1,0 +1,12 @@
+Control
+CanvasLayer
+AudioStreamPlayer
+Camera2D
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+CPUParticles2D
+Marker2D
+CollisionShape2D
+RigidBody2D
+CharacterBody2D

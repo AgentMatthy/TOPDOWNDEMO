@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://csdgpqli7fyc7"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_34trl"]
+[ext_resource type="Texture2D" uid="uid://c5wajj34hegyo" path="res://Sprites/TDD_PLAYER.svg" id="1_x6v31"]
+[ext_resource type="Texture2D" uid="uid://wwe2u05h1nc5" path="res://Sprites/background.svg" id="3_qwm1q"]
+[ext_resource type="Texture2D" uid="uid://c2m5dpgrxoqjq" path="res://Sprites/bullet.png" id="3_yabpn"]
+[ext_resource type="AudioStream" uid="uid://cdi0vm2cjg55t" path="res://Sounds/dash.wav" id="4_tuh16"]
+[ext_resource type="AudioStream" uid="uid://dev7acawaexdm" path="res://Sounds/shoot3.wav" id="5_04bpt"]
+[ext_resource type="AudioStream" uid="uid://5kijf8xi2nvi" path="res://Sounds/dash-reloaded.wav" id="6_d6e8i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wdeb4"]
+radius = 59.0
+
+[sub_resource type="Curve" id="Curve_7ly5j"]
+_data = [Vector2(0, 1), 0.0, 0.0174887, 0, 0, Vector2(1, 0), -2.6363, 0.0, 0, 0]
+point_count = 2
+
+[node name="MAIN" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(961, 536)
+script = ExtResource("1_34trl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_wdeb4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.216551, 0.216551)
+texture = ExtResource("1_x6v31")
+
+[node name="Muzzle" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(68, 0)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CharacterBody2D"]
+light_mask = 0
+z_index = -1
+position = Vector2(-46, 0)
+amount = 20
+lifetime = 0.3
+speed_scale = 5.0
+fixed_fps = 144
+texture = ExtResource("3_yabpn")
+emission_shape = 5
+emission_points = PackedVector2Array()
+emission_normals = PackedVector2Array()
+emission_colors = PackedColorArray()
+spread = 0.0
+gravity = Vector2(0, 0)
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_7ly5j")
+color = Color(1, 1, 0, 1)
+
+[node name="SFX-Dash" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("4_tuh16")
+
+[node name="SFX-Shoot" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("5_04bpt")
+volume_db = -4.0
+pitch_scale = 1.2
+
+[node name="SFX-Dash-R" type="AudioStreamPlayer" parent="CharacterBody2D"]
+stream = ExtResource("6_d6e8i")
+volume_db = -15.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("3_qwm1q")
+centered = false
