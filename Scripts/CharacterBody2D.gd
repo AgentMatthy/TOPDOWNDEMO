@@ -113,6 +113,7 @@ func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
 		die()	
 
+#HealthBar
 func update_health():
 	var healthBar = GUI.get_node("Control").get_node("healthBar")
 	healthBar.value = health
