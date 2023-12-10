@@ -28,11 +28,15 @@ var health = 100
 
 @onready var muzzle = $Muzzle
 
-func _physics_process(delta):
-	
+func _process(delta):
+	var target = get_global_mouse_position()
+	var new_transform = self.transform.looking_at(target)
+	self.transform  = self.transform.interpolate_with(new_transform, speed * delta)
 
+	move_and_slide()
+
+func _physics_process(delta):
 	update_health() #update health
-	
 	direction = Vector2(0, 0)
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1 * movespeed
@@ -46,11 +50,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1 * movespeed
 		direction.x += -1
-		
 	#Mouse smoothing
-	var target = get_global_mouse_position()
-	var new_transform = self.transform.looking_at(target)
-	self.transform  = self.transform.interpolate_with(new_transform, speed * delta)
+
 		
 	velocity = velocity * 0.91
 
@@ -87,7 +88,7 @@ func _physics_process(delta):
 			bullet_cooldown = default_bullet_cooldown
 	
 	
-	move_and_slide()
+
 		
 func dash():
 	velocity += direction * dash_speed
