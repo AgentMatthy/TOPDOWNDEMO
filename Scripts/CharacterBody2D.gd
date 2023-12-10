@@ -20,10 +20,19 @@ var dash_charge_q = 0
 var default_dash_cooldown_q = 50
 var dash_q_mp = 0.4
 
+#health
+var health = 100
+
+#GUI
+@export var GUI: Node
 
 @onready var muzzle = $Muzzle
 
 func _physics_process(delta):
+	
+
+	update_health() #update health
+	
 	direction = Vector2(0, 0)
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1 * movespeed
@@ -38,6 +47,7 @@ func _physics_process(delta):
 		velocity.x -= 1 * movespeed
 		direction.x += -1
 		
+	#Mouse smoothing
 	var target = get_global_mouse_position()
 	var new_transform = self.transform.looking_at(target)
 	self.transform  = self.transform.interpolate_with(new_transform, speed * delta)
@@ -84,8 +94,7 @@ func dash():
 	
 func dash_q():
 	velocity += direction * dash_speed * dash_q_mp
-	#test commit
-
+	
 
 func fire():
 	var bullet_instance = bullet.instantiate()
@@ -104,6 +113,6 @@ func _on_area_2d_body_entered(body):
 	if "Enemy" in body.name:
 		die()	
 
-
-
-
+func update_health():
+	var healthBar = GUI.get_node("Control").get_node("healthBar")
+	healthBar.value = health

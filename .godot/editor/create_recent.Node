@@ -1,4 +1,6 @@
 Control
+TextureProgressBar
+ProgressBar
 CanvasLayer
 AudioStreamPlayer
 Camera2D

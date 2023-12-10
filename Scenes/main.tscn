@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csdgpqli7fyc7"]
+[gd_scene load_steps=11 format=3 uid="uid://csdgpqli7fyc7"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_34trl"]
 [ext_resource type="Texture2D" uid="uid://c5wajj34hegyo" path="res://Sprites/TDD_PLAYER.svg" id="1_x6v31"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cdi0vm2cjg55t" path="res://Sounds/dash.wav" id="4_tuh16"]
 [ext_resource type="AudioStream" uid="uid://dev7acawaexdm" path="res://Sounds/shoot3.wav" id="5_04bpt"]
 [ext_resource type="AudioStream" uid="uid://5kijf8xi2nvi" path="res://Sounds/dash-reloaded.wav" id="6_d6e8i"]
+[ext_resource type="PackedScene" uid="uid://ckondpxetgyqy" path="res://Scenes/GUI.tscn" id="8_is7w0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wdeb4"]
 radius = 59.0
@@ -17,11 +18,13 @@ point_count = 2
 
 [node name="MAIN" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." node_paths=PackedStringArray("GUI")]
 position = Vector2(961, 536)
 script = ExtResource("1_34trl")
+GUI = NodePath("../GUI")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+visible = false
 shape = SubResource("CircleShape2D_wdeb4")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
@@ -52,7 +55,7 @@ spread = 0.0
 gravity = Vector2(0, 0)
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_7ly5j")
-color = Color(1, 1, 0, 1)
+color = Color(1, 0.737255, 0, 1)
 
 [node name="SFX-Dash" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("4_tuh16")
@@ -72,5 +75,9 @@ volume_db = -15.0
 motion_mirroring = Vector2(1920, 1920)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(21, 0)
 texture = ExtResource("3_qwm1q")
 centered = false
+
+[node name="GUI" parent="." instance=ExtResource("8_is7w0")]
+unique_name_in_owner = true

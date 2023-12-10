@@ -1,2 +1,4 @@
 res://Scenes/main.tscn
+res://Scenes/BULLET.tscn
+res://Scenes/GUI.tscn
 res://Scripts/CharacterBody2D.gd
