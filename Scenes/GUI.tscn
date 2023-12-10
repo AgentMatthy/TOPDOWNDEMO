@@ -11,6 +11,7 @@ offset_bottom = 40.0
 [node name="healthBar" type="ProgressBar" parent="Control"]
 unique_name_in_owner = true
 modulate = Color(0, 0.780392, 0, 1)
+layout_mode = 0
 offset_left = 40.0
 offset_top = 45.0
 offset_right = 353.0
