@@ -3,18 +3,20 @@ extends CharacterBody2D
 var movespeed = 80
 var bulletspeed = 1500
 var bullet = preload("res://Scenes/BULLET.tscn")
-var bullet_cooldown = 0
+var bullet_cooldown = 50
 var default_bullet_cooldown = 20
 var recoil = 400
 var direction = Vector2(0, 0)
 var speed = 10
 
+#dash
 var dash_cooldown = 0
 var dash_charge = 0
 var default_dash_charge = 16
 var default_dash_cooldown = 80
 var dash_speed = 3000
 
+#quick dash
 var dash_cooldown_q = 0
 var dash_charge_q = 0
 var default_dash_cooldown_q = 50
