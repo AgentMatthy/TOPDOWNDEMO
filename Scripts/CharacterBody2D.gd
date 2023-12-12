@@ -3,7 +3,7 @@ extends CharacterBody2D
 var movespeed = 80
 var bulletspeed = 1500
 var bullet = preload("res://Scenes/BULLET.tscn")
-var bullet_cooldown = 0
+var bullet_cooldown = 20
 var default_bullet_cooldown = 20
 var recoil = 400
 var direction = Vector2(0, 0)
