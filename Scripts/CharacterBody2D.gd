@@ -20,6 +20,9 @@ var dash_charge_q = 0
 var default_dash_cooldown_q = 50
 var dash_q_mp = 0.4
 
+#-PRELOADS-------------
+@onready var particleShoot = %ShootParticle
+
 #health
 var health = 100
 
@@ -105,6 +108,7 @@ func fire():
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
 	velocity += Vector2(recoil, 0).rotated(rotation) * -1
 	$"SFX-Shoot".play()
+	particleShoot.emitting
 
 
 func die():

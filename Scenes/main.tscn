@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://csdgpqli7fyc7"]
+[gd_scene load_steps=12 format=3 uid="uid://csdgpqli7fyc7"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_34trl"]
 [ext_resource type="Texture2D" uid="uid://c5wajj34hegyo" path="res://Sprites/TDD_PLAYER.svg" id="1_x6v31"]
@@ -14,6 +14,12 @@ radius = 59.0
 
 [sub_resource type="Curve" id="Curve_7ly5j"]
 _data = [Vector2(0, 1), 0.0, 0.0174887, 0, 0, Vector2(1, 0), -2.6363, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_kjedg"]
+min_value = -100.0
+max_value = 100.0
+_data = [Vector2(0, 1.18765), 0.0, 0.0, 0, 0, Vector2(1, 1.80523), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="MAIN" type="Node2D"]
@@ -58,6 +64,19 @@ initial_velocity_max = 58.76
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_7ly5j")
 color = Color(1, 0.737255, 0, 1)
+
+[node name="ShootParticle" type="CPUParticles2D" parent="CharacterBody2D"]
+unique_name_in_owner = true
+position = Vector2(68, 0)
+emitting = false
+amount = 15
+lifetime = 0.5
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.71
+initial_velocity_max = 101.01
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+linear_accel_curve = SubResource("Curve_kjedg")
 
 [node name="SFX-Dash" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("4_tuh16")
