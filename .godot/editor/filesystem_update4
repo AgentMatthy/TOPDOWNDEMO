@@ -1,6 +1,1 @@
 res://Scenes/menu.tscn
-res://Scenes/main.tscn
-res://Scenes/BULLET.tscn
-res://Scenes/GUI.tscn
-res://Scenes/menu.gd
-res://Scripts/CharacterBody2D.gd
