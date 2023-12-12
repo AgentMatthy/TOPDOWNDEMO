@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< HEAD
 ::res://::1702390814
 icon.svg::CompressedTexture2D::4393892446634127009::1702225656::1702225656::1::::<><>::
 README.md::TextFile::-1::1702225656::0::1::::<><>::
@@ -24,3 +25,28 @@ cursor2.png::CompressedTexture2D::7239262989464292335::1702225656::1702225656::1
 cursor3.png::CompressedTexture2D::6952628844652588440::1702225656::1702225656::1::::<><>::
 cursor4.png::CompressedTexture2D::3829948075178826804::1702225656::1702225656::1::::<><>::
 TDD_PLAYER.svg::CompressedTexture2D::6923939576553454342::1702225656::1702225656::1::::<><>::
+=======
+::res://::1702389549
+icon.svg::CompressedTexture2D::4393892446634127009::1701197458::1701197463::1::::<><>::
+README.md::TextFile::-1::1702228146::0::1::::<><>::
+::res://Scenes/::1702383306
+BULLET.tscn::PackedScene::8536614287781817183::1702382897::0::1::::<><>::uid://c2m5dpgrxoqjq::::res://Sprites/bullet.png
+GUI.tscn::PackedScene::5504426594199191480::1702382897::0::1::::<><>::
+main.tscn::PackedScene::6042825632771057964::1702383306::0::1::::<><>::res://Scripts/CharacterBody2D.gd<>uid://c5wajj34hegyo::::res://Sprites/TDD_PLAYER.svg<>uid://wwe2u05h1nc5::::res://Sprites/background.svg<>uid://c2m5dpgrxoqjq::::res://Sprites/bullet.png<>uid://cdi0vm2cjg55t::::res://Sounds/dash.wav<>uid://dev7acawaexdm::::res://Sounds/shoot3.wav<>uid://5kijf8xi2nvi::::res://Sounds/dash-reloaded.wav<>uid://ckondpxetgyqy::::res://Scenes/GUI.tscn
+::res://Scripts/::1702383306
+CharacterBody2D.gd::GDScript::-1::1702383306::0::1::::<>CharacterBody2D<>::
+::res://Sounds/::1701478471
+dash-reloaded.wav::AudioStreamWAV::2126811209420923902::1701478447::1701478471::1::::<><>::
+dash.wav::AudioStreamWAV::5001479018917032263::1701476414::1701476931::1::::<><>::
+shoot2.mp3::AudioStreamMP3::3166053539322704535::1701477778::1701477805::1::::<><>::
+shoot3.wav::AudioStreamWAV::7485312408281678382::1701478257::1701478257::1::::<><>::
+shoot.wav::AudioStreamWAV::2530578903804889154::1701477471::1701477471::1::::<><>::
+::res://Sprites/::1701476435
+background.svg::CompressedTexture2D::1589863045493092950::1701249112::1701249112::1::::<><>::
+bullet.png::CompressedTexture2D::6694540343749288066::1701199198::1701199205::1::::<><>::
+cursor1.png::CompressedTexture2D::5799456796175160420::1701216761::1701216761::1::::<><>::
+cursor2.png::CompressedTexture2D::7239262989464292335::1701217016::1701217016::1::::<><>::
+cursor3.png::CompressedTexture2D::6952628844652588440::1701217331::1701217331::1::::<><>::
+cursor4.png::CompressedTexture2D::3829948075178826804::1701217502::1701217502::1::::<><>::
+TDD_PLAYER.svg::CompressedTexture2D::6923939576553454342::1701198344::1701198357::1::::<><>::
+>>>>>>> a0dae524bafd99687b086b252f7a3f5cae447e36

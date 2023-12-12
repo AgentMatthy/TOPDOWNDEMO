@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 Button
 VBoxContainer
 HBoxContainer
 Label
+=======
+CPUParticles2D
+>>>>>>> a0dae524bafd99687b086b252f7a3f5cae447e36
 Control
 MarginContainer
 VSeparator
@@ -12,3 +16,12 @@ CanvasLayer
 AudioStreamPlayer
 Camera2D
 Sprite2D
+<<<<<<< HEAD
+=======
+ParallaxLayer
+ParallaxBackground
+Marker2D
+CollisionShape2D
+RigidBody2D
+CharacterBody2D
+>>>>>>> a0dae524bafd99687b086b252f7a3f5cae447e36

@@ -10,8 +10,13 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="TOPDOWN DEMO"
 run/main_scene="res://Scenes/menu.tscn"
+=======
+config/name="TDM GIT"
+run/main_scene="res://Scenes/main.tscn"
+>>>>>>> a0dae524bafd99687b086b252f7a3f5cae447e36
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

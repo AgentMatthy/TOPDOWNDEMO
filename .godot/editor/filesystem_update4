@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 res://Scenes/menu.tscn
+=======
+res://Scenes/main.tscn
+res://Scripts/CharacterBody2D.gd
+res://Scenes/BULLET.tscn
+res://Scenes/GUI.tscn
+>>>>>>> a0dae524bafd99687b086b252f7a3f5cae447e36
